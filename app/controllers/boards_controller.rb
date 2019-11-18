@@ -9,7 +9,14 @@ class BoardsController < ApplicationController
 
     def create
         Board.create(board_params)
+        redirect_to 'boards'
     end
+
+    def show
+        @board = Board.find(params[:id])
+        end
+
+
     private
     def board_params
         params.require(:board).permit(:name, :title, :body)
