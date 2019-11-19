@@ -8,8 +8,8 @@ class BoardsController < ApplicationController
     end
 
     def create
-        Board.create(board_params)
-        redirect_to 'boards_path'
+        board = Board.create(board_params)
+        redirect_to boards_path
     end
 
     def show
@@ -24,6 +24,12 @@ class BoardsController < ApplicationController
         board = Board.find(params[:id])
         board.update(board_params)
         redirect_to board
+    end
+
+    def destroy
+        board = Board.find(params[:id])
+        board.destroy
+        redirect_to boards_path
     end
 
     private
