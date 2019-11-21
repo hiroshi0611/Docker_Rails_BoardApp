@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'mypage', to: 'users#me'
   post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sesssions#delete' 
+  delete 'logout', to: 'sessions#delete' 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root 'boards#index'
   # get 'boards', to: 'boards#index'
